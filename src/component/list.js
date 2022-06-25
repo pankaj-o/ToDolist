@@ -1,23 +1,27 @@
-import React, { useState } from "react";
-import "./list.css";
-import Listadd from "./Listadd";
+import React, { useState } from 'react'
+import './list.css'
+import Listadd from './Listadd'
 export default function List() {
-  const [inputitem, setInputItem] = useState("");
-  const [item, setItem] = useState([]);
-  let boloen;
+  const [inputitem, setInputItem] = useState('')
+  const [item, setItem] = useState([])
   const click = () => {
-    if (inputitem !== "") {
+    if (inputitem.trim().length !== 0) {
       setItem(() => {
-        return [...item, inputitem];
-      });
+        return [...item, inputitem]
+      })
     } else {
-      return alert("kfo");
+      alert('filed required')
     }
-    setInputItem(" ");
-  };
+    setInputItem(' ')
+  }
+
   const Deleted = (x) => {
-    console.log("key",x);
-  };
+    const data = item.filter((item, index) => {
+      return index !== x
+    })
+
+    setItem(data)
+  }
   return (
     <>
       <div className="body">
@@ -32,24 +36,26 @@ export default function List() {
               placeholder="work to do..."
               value={inputitem}
               onChange={(e) => {
-                setInputItem(e.target.value);
+                setInputItem(e.target.value)
               }}
             />
             <button className=" addbtn" onClick={click}>
               Add
             </button>
           </div>
-          
+
           {item.map((listitem, index) => {
             return (
               <Listadd
-               listitem={listitem}
+                listitem={listitem}
                 index={index}
-                Deleted={Deleted}/>
-            );
+                Deleted={Deleted}
+                key={index}
+              />
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
 }
