@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.body {
+  height: auto;
+  background: linear-gradient(120deg, blue, green);
+  font-family: 'Recursive', sans-serif;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    color: beige;
+ 
+    
+}
+.container {
+  position: absolute;
+
+  width: 32%;
+  min-width: 150px;
+  /* border-radius: 30px; */
+  box-shadow: 0px 15px 15px rgb(227, 184, 184);
+  background-color: rgb(67, 125, 175);
+  border-radius: 20px;
+  /* border: 2px solid wheat; */
+  top: 15%;
+  left: 35%;
+  padding: 30px 30px;
+}
+.todoitems {
+    margin-top: 7px;
+  position: relative;
+  width: 370px;
+  height: 80px;
+  border: 2px solid rgb(129, 184, 135);
+  border-radius: 20px;
+  box-shadow: 3px 16px 20px rgb(118, 248, 248);
+
+  padding: 20px 10px;
+}
+.inputtype {
+  position: relative;
+  top: 5px;
+  font-size: 15px;
+  height: 35px;
+  width: 275px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.addbtn {
+  position: relative;
+  float: right;
+  height: 31px;
+  width: 50px;
+  top: 6px;
+  background-color: #a2ade7;
+  border: none;
+  color: rgb(28, 26, 25);
+  cursor: pointer;
+  padding: 5px 5px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.addbtn:hover{
+    background: linear-gradient(120deg, rgb(172, 172, 212), rgb(16, 17, 16));
+    color: bisque;
+}
+.inputtype:hover{
+    border: 2px solid rgb(232, 232, 142);
+    background-color: #c1c2c8;
+
+}
+.taskfield{
+  margin: 10px ;
+  width: 250px;
+  
+  list-style: none;
+}
+.deletebutton{
+    float: inline-end;
+    position: relative;
+  float: right;
+  height: 31px;
+  width: 59px;
+  left: 14px;
+  background-color: #a2ade7;
+  border: none;
+  color: rgb(28, 26, 25);
+  cursor: pointer;
+  padding: 6px 2px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15px;  
+
+}
+.deletebutton:hover{
+    background: linear-gradient(120deg, rgb(172, 172, 212), rgb(16, 17, 16));
+    color: bisque;
+}
+.addedlist{
+    display: flex;
+    align-items: center;
+    background-color: bisque;
+    height: 30px;
+    margin-top: 45px;
+    padding: 25px 25px;
+    border-radius: 25px;
+    box-shadow: 3px 16px 20px rgb(118, 248, 248);
+    
+}
