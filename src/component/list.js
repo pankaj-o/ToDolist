@@ -6,7 +6,7 @@ export default function List() {
   const [item, setItem] = useState([]);
   let boloen;
   const click = () => {
-    if (inputitem !== "") {
+    if (inputitem.trim().length !== "") {
       setItem(() => {
         return [...item, inputitem];
       });
@@ -16,7 +16,7 @@ export default function List() {
     setInputItem(" ");
   };
   const Deleted = (x) => {
-    console.log("key",x);
+    if(x==setItem())
   };
   return (
     <>
