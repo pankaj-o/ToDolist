@@ -4,23 +4,64 @@ import Listadd from "./Listadd";
 export default function List() {
   const [inputitem, setInputItem] = useState("");
   const [item, setItem] = useState([]);
-  let boloen;
+  const[toggleEdit, setToggleEdit]=useState(true)
+  const [editId,setEditId]=useState(null)
+
+
+
   const click = () => {
-    if (inputitem.trim().length !== "") {
+    if (inputitem.trim().length !== 0) {
       setItem(() => {
-        return [...item, inputitem];
+        const keyitems = {
+          id: new Date().getTime().toString(),
+          name: inputitem,
+        };
+        return [...item, keyitems];
       });
-    } else {
-      return alert("kfo");
+    }
+    else if(inputitem && !toggleEdit){
+      setItem(item.map((elem)=>{
+           if(elem.id===editId){
+            return{...elem, name:inputitem}
+           }
+           return elem
+      }
+      
+      ))
+     setToggleEdit(true)
+     setInputItem('')
+     setEditId(null)
+      
+    } 
+    else {
+      alert("field required");
     }
     setInputItem(" ");
   };
+  //delete functionality
   const Deleted = (x) => {
-    if(x==setItem())
+    const data = item.filter((val) => {
+      return x !== val.id;
+    });
+
+    setItem(data);
+  };
+  //edit button functionaliy
+  const Edit = (Id) => {
+    console.log(Id)
+    // console.log(newEditItem.name)
+     let newEditItem=item.find((elem)=>{
+      return elem.id===Id
+     })
+     setToggleEdit(false)
+     setInputItem(newEditItem.name)
+     setEditId(Id)
+
+
   };
   return (
     <>
-      <div className="body">
+      <div className="body1">
         <div className="container">
           <div className="heading">
             <h2>Create your Todo List</h2>
@@ -35,17 +76,21 @@ export default function List() {
                 setInputItem(e.target.value);
               }}
             />
-            <button className=" addbtn" onClick={click}>
-              Add
-            </button>
+            {toggleEdit?<span class="material-symbols-outlined addbtn"  onClick={click}>add_circle</span>:
+            <span className="material-symbols-outlined edit" onClick={() => {
+            
+          }}>edit</span>}
+            
           </div>
-          
-          {item.map((listitem, index) => {
+
+          {item.map((listitem) => {
             return (
               <Listadd
-               listitem={listitem}
-                index={index}
-                Deleted={Deleted}/>
+                listname={listitem.name}
+                listid={listitem.id}
+                Deleted={Deleted}
+                edit={Edit}
+              />
             );
           })}
         </div>

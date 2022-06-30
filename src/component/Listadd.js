@@ -1,16 +1,23 @@
 import React from "react";
 
-
-export default function Listadd({index,listitem,Deleted}) {
+export default function Listadd({  listname, Deleted,listid,edit }) {
   return (
     <>
-      <div  className="addedlist">
+      <div className="addedlist">
         <ul>
-          <li className="taskfield">{listitem}</li>
+          <li className="taskfield">{listname}</li>
         </ul>
-        <button className="deletebutton"onClick={()=>Deleted(index)} >
+        <span className="material-symbols-outlined edit" onClick={() => {
+            edit(listid);
+          }}>edit</span>
+        <span
+          className="material-symbols-outlined deletebutton"
+          onClick={() => {
+            Deleted(listid);
+          }}
+        >
           delete
-        </button>
+        </span>
       </div>
     </>
   );
