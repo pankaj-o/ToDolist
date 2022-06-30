@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* background: linear-gradient(90deg, rgb(76, 76, 119), rgb(89, 125, 89),rgb(119, 73, 119)); */
 }
 .body1 {
   height: auto;
@@ -16,49 +17,42 @@
 }
 .container {
   position: absolute;
-
-  width: 32%;
-  min-width: 150px;
-  /* border-radius: 30px; */
+  
   box-shadow: 0px 15px 15px rgb(227, 184, 184);
   background-color: rgb(67, 125, 175);
   border-radius: 20px;
-  /* border: 2px solid wheat; */
   top: 15%;
-  left: 35%;
-  padding: 30px 30px;
+  left: 33%;
+  right: 33%;
+  padding: 30px 10px 0px 30px;
+
 }
 .todoitems {
   margin-top: 7px;
   position: relative;
-  width: 370px;
-  height: 80px;
+  width: 90%;
+  
   border: 2px solid rgb(129, 184, 135);
   border-radius: 20px;
   box-shadow: 3px 16px 20px rgb(118, 248, 248);
-
   padding: 20px 10px;
 }
 .inputtype {
   position: relative;
   top: 5px;
   font-size: 15px;
-  height: 35px;
-  width: 310px;
+  height: 60%;
+  width: 88%;
   padding: 10px 10px;
   border-radius: 15px;
-
   font-weight: 500;
   font-size: 15px;
 }
-
 .addbtn {
   position: relative;
   float: right;
   right: 7px;
   top: 8px;
-  
-
   cursor: pointer;
 }
 
@@ -68,10 +62,10 @@
 }
 .taskfield {
   min-width: 300px;
-  max-width: 300px;
-  height: 100%;
+  
+  width: 100%;
   word-wrap: break-word;
-  max-width: 250px;
+  
   list-style: none;
 }
 .edit {
@@ -81,14 +75,22 @@
 .deletebutton {
   cursor: pointer;
 }
-
 .addedlist {
   display: flex;
   align-items: center;
   background-color: bisque;
   height: 100%;
+  width: 90%;
   margin-top: 45px;
   padding: 10px;
   border-radius: 25px;
   box-shadow: 3px 16px 20px rgb(118, 248, 248);
+}
+.clearbtndiv{
+  position: relative;
+  left: 40%;
+  margin-top: 5px ;
+  padding:5px ;
+  cursor: pointer;
+
 }
